@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="bookstore">
+    <native2ascii src="src/main/resources/" includes="c3p0.properties" dest="out"/>
+    <property name="base" value="test" />
+</project>

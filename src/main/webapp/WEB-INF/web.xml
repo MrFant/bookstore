@@ -1,0 +1,84 @@
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+    <filter>
+        <filter-name>EncodingFilter</filter-name>
+        <filter-class>web.EncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+    
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>web.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>web.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>CheckImageServlet</servlet-name>
+        <servlet-class>web.CheckImageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckImageServlet</servlet-name>
+        <url-pattern>/imageCode</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>web.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>MyAccountServlet</servlet-name>
+        <servlet-class>web.MyAccountServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyAccountServlet</servlet-name>
+        <url-pattern>/myAccount</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ShowProductByPageServlet</servlet-name>
+        <servlet-class>web.ShowProductByPageServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowProductByPageServlet</servlet-name>
+        <url-pattern>/showProductByPage</url-pattern>
+    </servlet-mapping>
+    
+    
+    <jsp-config>
+        <jsp-property-group>
+            <display-name>JSPConfiguration</display-name>
+            <url-pattern>*.js</url-pattern>
+            <el-ignored>true</el-ignored>
+            <page-encoding>UTF-8</page-encoding>
+            <scripting-invalid>false</scripting-invalid>
+        </jsp-property-group>
+    </jsp-config>
+
+    <description>JNDI DataSource</description>
+    <resource-ref>
+        <res-ref-name>jndi/h2</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+    
+</web-app>
